@@ -1,0 +1,11 @@
+import os
+def print_file_path(indir):
+    for wroot ,wdirs,wfiles in os.walk(indir):
+        for wfile in wfiles:
+            (file_name,file_ext) = os.path.splitext(wfile)
+            if ('wx' in file_name) and (file_ext =='.py'):
+                filepath = os.path.join(wroot,wfile)
+                print(filepath)
+if __name__ == '__main__':
+    inws = '/home/bk/progs'
+    print_file_path(inws)

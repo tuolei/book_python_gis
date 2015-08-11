@@ -1,0 +1,194 @@
+1.
+class DoubleRep(object):
+def __str__(self):
+return "Hi I`m a __str__"
+def __repr__(self):
+return "Hi I`m a __repr__"
+dr = DoubleRep()
+print(dr)
+dr
+2.
+class DoubleRep(object):
+def __str__(self):
+return "Hi I`m a __str__"
+def __repr__(self):
+return "Hi I`m a __repr__"
+dr = DoubleRep()
+print(dr)
+dr
+3.Tab的自动完成
+
+import rlcompleter,readilne
+readline.parse_andd_bind('tab:complete')
+
+import os
+os.lis
+---alias
+alias nss netstat-Iptn
+nss
+nss|grep 80
+
+alias achoo echo "|%l|"
+achoo
+achoo these are args
+
+alias nss netstat -Iptn %l
+nss
+nss | grep 80
+
+alias
+alias achoo echo first: "|%s|",second:"|%s|"
+achoo foo bar
+store achoo
+achoo one two
+
+4.Shell的执行
+！netstat -lptn
+
+user = 'jmjones'
+process = 'bash'
+!ps aux | grep $user | grep $process
+
+l = !ps aux | grep $user | grep $process
+l
+
+5.rehash
+__IP.alias_table
+
+6.rehashx
+
+7.cd
+cd /tmp
+pwd
+cd -
+cd -q/tmp
+pwd
+cd -b t
+
+8.bookmark
+cd /tmp
+bookmark t
+bookmark muzak /home/jmjones/local/Music
+bookmark -l
+
+bookmark ulb /usr/local/bin
+bookmark -l
+bookmark -d ulb
+bookmark -l
+
+bookmark -b<TAB>-------------------------------------------
+
+bookmark -r 
+bookmark -l
+
+9.dhist
+dhist
+cd -
+dhist 1
+dhist 1 3
+
+10.pwd
+cd /tmp
+pwd
+
+11.可变拓展
+for i in range(10):
+    !data > ${i}.txt
+ls
+!cat sh.txt
+
+12.字符串处理
+
+ps aux | awk '{if ($1 == "jmjones") print $2}'-------------------------------------------
+
+ps = !ps aux
+ps.grep('lighttpd')
+ps.grep('Mar07',prune=True)
+
+file_list.grep(os.path.isfile)
+file_list.grep(os.path.isdir)
+
+import os
+file_list = !ls
+file_list
+file_list.grep(os.path.isfile)
+file_list.grep(os.path.isdir)
+
+ps.fields(0,1).grep('jmjones')
+
+ps.grep('Mar07',prune=True).fields(0,1,8)
+ps.fields(0,1).grep('jmjones').fields(1)
+ps.fields(0,1).grep('jmjones').fields(1).s
+
+ps aux | awk '{if ($1 == "jmjones") print $2}'-------------------------------------------------
+
+ps = !ps aux
+ps.grep('jmjones',field=0)
+ps.grep('jmjones',field=0).fields(1)
+
+13. shprofile
+
+
+信息搜集
+
+1. page
+p = !ps aux
+page -r p
+
+2.pdef
+
+def myfunc(a,b,c,d):
+    '''return something by using a,b,c,d to do something'''
+    return a,b,c,d
+    
+pdef myfunc
+
+3. pdoc
+pdoc myfunc
+
+4.pfile
+import os 
+pfile os
+
+5.pinfo
+有一个模块如下：
+class Foo:
+    """my foo class"""
+    def __init__(self):
+        pass
+        
+class Bar:
+    """my Bar class"""
+    def __init__(self):
+        pass
+        
+class Bam:
+    """my Bam class"""
+    def __init__(self):
+        pass
+我们可以从模块自身获得相应的信息:
+import some_module
+pinfo some_module
+
+亦可以获得模块中所包含的类的相关信息：
+pinfo some_module.Foo
+
+此外，还可以获得类的实例的相关信息：
+f = some_module.Foo()
+pinfo f
+        
+? f
+f ?
+
+some_module.Foo ??
+
+6.psource
+
+import some_other_module
+psource some_other_module
+
+psource some_other_module.Foo
+psource some_other_module.baz
+
+    
+

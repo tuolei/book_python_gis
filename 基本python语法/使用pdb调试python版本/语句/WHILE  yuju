@@ -1,0 +1,24 @@
+number = 23
+running = True
+while running:
+    guess = int(input('Enter an integer : '))
+    if guess == number:
+        print('Congratulations,you guessd it.')
+        running = False
+    elif guess < number :
+        print ('No,it is a little highter than that')
+    else:
+        print('No,it is a little lower than that')
+else:
+    print('The while loop is lower.')
+print('Done')
+
+Enter an integer : 22
+No,it is a little highter than that
+Enter an integer : 35
+No,it is a little lower than that
+Enter an integer : 23
+Congratulations,you guessd it.
+The while loop is lower.
+Done
+

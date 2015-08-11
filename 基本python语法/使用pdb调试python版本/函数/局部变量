@@ -1,0 +1,12 @@
+def func(x):
+    print('x is' ,x )
+    x = 2
+    print('Changed local x to',x )
+x = 5
+func(x)
+print('x is still',x)
+
+('x is', 5)
+('Changed local x to', 2)
+('x is still', 5)
+

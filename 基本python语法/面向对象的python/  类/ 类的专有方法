@@ -1,0 +1,35 @@
+>>> class book:
+...     __author = ''
+...     __name = ''
+...     __page = 0
+...     price = 0
+...     __press = ''
+...     def __check(self,item):
+...         if item == '':
+...             return 0
+...         else:
+...             return 1
+...     def show(self):
+...         if self.__check(self.__author):
+...             print(self.__author)
+...         else:
+...             print('No value')
+...         if self.__check(self.__name):
+...             print(self.__name)
+...         else:
+...             print('No value')
+...     def setname(self,name):
+...         self.__name = name
+...     def __init__(self,author,name):--------------使用__init__方法，为__author及__name赋初值
+...         self.__author = author
+...         self.__name = name
+... 
+>>> a = book('Tom','A Wonderfull Book')---------------实例化。为__author及__name赋初值
+>>> a.show()
+Tom
+A Wonderfull Book
+>>> a.setname('About Jack')---------------------------重新设置__name私有属性
+>>> a.show()
+Tom
+About Jack
+

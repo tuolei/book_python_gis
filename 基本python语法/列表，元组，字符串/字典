@@ -1,0 +1,49 @@
+dict_demo = {'GIS':'Geographic Information System',
+    'RS':'Remote Sencing',
+    'GPS':'Globl Positioning System',
+    'DEM':'Dynamic Effect Model'}
+
+print(dict_demo['GPS'])
+Globl Positioning System
+
+print(dict_demo['DEM'])
+Dynamic Effect Model
+
+print(dict_demo.items())
+[('GPS', 'Globl Positioning System'), ('GIS', 'Geographic Information System'), ('DEM', 'Dynamic Effect Model'), ('RS', 'Remote Sencing')]
+
+dict_demo['DEM'] = 'Digital ElevationModel'
+
+print(dict_demo['DEM'])
+Digital ElevationModel
+
+
+
+>>> dic = {'apple':2,'orange':1}
+>>> dic.copy() #fu zhi zi dian
+{'orange': 1, 'apple': 2}
+>>> dic['banana'] = 5  #zeng jia yi xiang 
+>>> dic.items()
+dict_items([('orange', 1), ('banana', 5), ('apple', 2)]) #huo qu cheng yuan de lie biao 
+>>> dic.pop('apple') #shan chu "pop".bing fan hui qi zhi    
+2
+>>> dic
+{'orange': 1, 'banana': 5}
+>>> dic.pop('apple',3)
+3
+>>> dic.keys()  #huo qu jian de lie biao
+dict_keys(['orange', 'banana'])
+>>> dic.values()  # huo qu zhi de lie biao
+dict_values([1, 5])
+>>> dic.update({'banana':3})  #geng xin banana de zhi 
+>>> dic
+{'orange': 1, 'banana': 3}
+>>> dic.update({'apple':2})
+>>> dic
+{'orange': 1, 'banana': 3, 'apple': 2}
+>>> dic['orange']  #tong guo jian huo qu zhi
+1
+>>> dic.clear()
+>>> dic
+{}
+

@@ -1,0 +1,19 @@
+>>> hi()
+hi,python!
+>>> hi
+<function hi at 0x7f57ba1c9bf8>
+>>> def ListSum(L):
+...     result = 0
+...     for i in L:
+...         result = result + i
+...     return result
+... 
+>>> l = [1,2,3,4,5]
+>>> r = ListSum(l)
+>>> print(r)
+15
+>>> r = hi()
+hi,python!
+>>> print(r)
+None
+

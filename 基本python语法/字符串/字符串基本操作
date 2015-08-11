@@ -1,0 +1,197 @@
+path = r'e:book'
+print(path)
+e:book
+print('**n\t''r**')
+**n	r**
+print(len(path))
+6
+str_val = 's'+'pam'
+print(str_val)
+spam
+str_val = 's'+'pam'
+print(str_val)
+spam
+print('='*10)
+==========
+print('abc'+str(9))
+abc9
+val = int('42')
+print(val)
+42
+val = str(42)
+print(val)
+42
+val = float('42.0')
+print(val)
+42.0
+print(ord('s'))
+115
+print(type(ord('s')))
+<type 'int'>
+print(chr(115))
+s
+print(type(chr(115)))
+<type 'str'>
+
+s = 'spam'
+k = 'l'.join(l)
+print(k)
+slplalm
+
+s = 'spam'
+l = list(s)
+print(l)
+['s', 'p', 'a', 'm']
+
+k = 'l'.join(l)
+print(k)
+slplalm
+
+s = s+'a'
+s = s[3:] + 'b'
+s = s.replace('pl','pa')
+s = 'abcdefg'
+
+print(s[1:])
+bcdefg
+
+print(s[1:-1])
+bcdef
+
+str_val  = 'abcd'
+str_val = str_val.capitalize()
+print(str_val)
+Abcd
+str_val = str_val.lower()
+print(str_val)
+abcd
+
+print(str_val.isalpha())
+True
+
+print(str_val.isdigit())
+False
+
+str_val  = 'abcdfgxabcdyzcdba'
+str_val = str_val.strip()
+print(str_val)
+abcdfgxabcdyzcdba
+
+str_val = str_val.strip('a')
+
+print(str_val)
+bcdfgxabcdyzcdb
+
+tepstr = str_val
+str_val = str_val.strip('bc')
+print(str_val)
+dfgxabcdyzcd
+
+str_val = tepstr.strip('cb')
+print(str_val)
+dfgxabcdyzcd
+str_val = list(str_val)
+str_val.sort()
+str_val = ''.join(str_val)
+print(str_val)
+abccdddfgxyz
+
+str_val = str_val.upper()
+print(str_val)
+ABCCDDDFGXYZ
+
+
+ind_list = range(5,15)
+ind_list = [str(x) for x in ind_list]
+print(str_list)
+['[0, 1, 2, 3, 4, 5, 6, 7]', '[0, 1, 2, 3, 4, 5, 6, 7]', '[0, 1, 2, 3, 4, 5, 6, 7]', '[0, 1, 2, 3, 4, 5, 6, 7]', '[0, 1, 2, 3, 4, 5, 6, 7]', '[0, 1, 2, 3, 4, 5, 6, 7]', '[0, 1, 2, 3, 4, 5, 6, 7]', '[0, 1, 2, 3, 4, 5, 6, 7]', '[0, 1, 2, 3, 4, 5, 6, 7]', '[0, 1, 2, 3, 4, 5, 6, 7]']
+
+
+str_val = 'The are %d %s in thr team .' % (2,'girls')
+print(str_val)
+The are 2 girls in thr team .
+
+
+
+
+>>> str = 'hi,python!'
+>>> str.capitalize()
+'Hi,python!'
+>>> str.count('p')#'p' de shu mu
+1
+>>> str.find('hello')#'hello' de qi shi wei zhi 
+-1
+>>> str.find('p')#'p' de qi shi wei zhi 
+3
+>>> str.isalnum()# shi fou bao han "0-9A-Za-z"
+False
+>>> str.isalpha()# shi fou jin han zi mu
+False
+>>> str.isdigit()#shi fou jin han shu zi 
+False
+>>> str.islower()#jun wei xiao xie zi mu?
+True
+>>> str.isspace()#jun wei kong bai fu?
+False
+>>> str.istitle()#shou zi mu da xie ?
+False
+>>> str.isupper()#jun wei da xie?
+False
+>>> str.join('HI')#lian jie
+'Hhi,python!I'
+>>> str.upper()#quan zhuan cheng da xie
+'HI,PYTHON!'
+>>> str.title()#jiang shou zi mu da xie
+'Hi,Python!'
+>>> str.split()
+['hi,python!']
+>>> str.split(',')
+['hi', 'python!']
+>>> len(str)#zi fu chuan chang du 
+10
+>>> str + 'hello'
+'hi,python!hello'
+>>> str * 3
+'hi,python!hi,python!hi,python!'
+>>> str 
+'hi,python!'
+>>> str = 'how'
+>>> str.join('---')
+'-how-how-'
+>>> str.join('a')
+'a'
+
+
+
+
+>>> str = 'Python is Wonderfui!'
+>>> str.split()
+['Python', 'is', 'Wonderfui!']
+>>> str.split(None,1)
+['Python', 'is Wonderfui!']
+>>> str.split(None,0)
+['Python is Wonderfui!']
+>>> str.split('0',)
+['Python is Wonderfui!']
+>>> str.split('o',)
+['Pyth', 'n is W', 'nderfui!']
+
+
+
+ge shi hua zi fu chuan 
+>>> s = 'So %s day!'
+>>> print(s % 'beautiful')
+So beautiful day!
+>>> s % 'beautiful!'
+'So beautiful! day!'
+>>> '1 %c 1 %c %d' % ('+','=',2)
+'1 + 1 = 2'
+>>> 'x = %x' % 0xA
+
+
+
+
+'x = a'
+>>> 'x = %X' % 0xa
+'x = A'
+

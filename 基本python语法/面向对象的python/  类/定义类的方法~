@@ -1,0 +1,64 @@
+>>> class book:                       #定义book类                    
+...     __author = ''                 #类的私有属性
+...     __name = '' 
+...     __pagr = 0
+...     price = 0
+...     __press = ''
+...     def show(self):               #定义类的show方法，其参数必须为self
+...         print(self.__author)      #输出类的私有属性
+...         print(self.__name)
+...     def setname(self,name):
+...         self.__name = name
+... 
+>>> a = book()
+>>> a.show()                          #调用show方法，输出为空，因为其私有属性都为空    
+
+
+>>> 
+>>> a.setname('Tom')
+>>> a.show()
+
+Tom
+
+
+
+
+
+
+
+>>> class book:
+...     __author = ''
+...     __name = ''
+...     __page = 0
+...     price = 0
+...     __price = ''
+...     def __check(self,item):-----------------------------定义__check私有方法
+...         if item == '':----------------------------------判断item是否为空
+...             return 0
+...         else:
+...             return 1
+...     def show(self):-------------------------------------修改show方法
+...         if self.__check(self.__author):
+...             print(self.__author)
+...         else:
+...             print('No value')
+...         if self.__check(self.__name):
+...             print(self.__name)
+...         else:
+...             print('No value')
+...     def setname(self,name):
+...         self.__name = name
+... 
+>>> a = book()----------------------------------------------类的实例化
+>>> a.show()------------------------------------------------调用show方法
+No value
+No value
+>>> a.setname('Tom')
+>>> a.show()
+No value
+Tom
+>>> a.__check()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: book instance has no attribute '__check'
+

@@ -1,0 +1,54 @@
+>>> class A:
+...     name = 'A'
+...     __num = 1
+...     def show(self):
+...         print(self.name)
+...         print(self.__num)
+...     def setnum(self,num):
+...         self.__num = num
+... 
+>>> class B:
+...     nameb = 'B'
+...     __numb = 2
+...     def show(self):
+...         print(self.nameb)
+...         print(self.__numb)
+...     def setname(self,name):
+...         self.nameb = name
+... 
+>>> class C(A,B):-----------------------------通过多重继承创建C类
+...     def showall(self):
+...         print(self.name)
+...         print(self.nameb)
+... 
+>>> c = C()-----------------------------------实用化C类生成c对象
+>>> c.showall()
+A
+B
+>>> c.show()
+A
+1
+>>> c.setnum(3)
+>>> c.show()
+A
+3
+>>> c.setname('D')
+>>> c.showall()
+A
+D
+
+
+
+
+
+如果需要在类C中使用类B的show方法，按照一下方式修改类C
+class C(A,B):
+    def showall（self):
+        print(self.name)
+        print(self.name)
+    show = B.show
+    
+c = C()
+c.show()
+B
+2
