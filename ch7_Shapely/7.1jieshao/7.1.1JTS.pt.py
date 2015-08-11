@@ -8,4 +8,3 @@ geom = ogr.CreateGeometryFromWkt(wkt)
 buf = geom.Buffer(1)
 buf.ExportToWkt()
 
-print()
