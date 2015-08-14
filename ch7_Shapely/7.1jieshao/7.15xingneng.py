@@ -2,6 +2,6 @@
 import os
 os.chdir('/home/liujx/gdata')
 
-from shapely import speedupe
-speedupe.Available
-speedupe.enable()
+from shapely import speedups
+speedups.available
+speedups.enable()

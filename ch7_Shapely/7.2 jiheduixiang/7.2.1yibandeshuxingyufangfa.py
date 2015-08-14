@@ -17,7 +17,7 @@ from osgeo import ogr
 import shapely
 import shapely.geometry
 
-driver = ogr.GetDriverByName('ESRI Shape')
+driver = ogr.GetDriverByName('ESRI Shapefile')
 out_shp ='world_borders.shp'
 if os.path.exists(out_shp):
     driver.DeleteDatasource(out_shp)
