@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 import os
-os.chdir('/home/liujx/gdata')
+os.chdir('/Users/bukun/gdata')
 
 #dian
-class Point( coordinates)
+# class Point( coordinates)
 
 from shapely.geometry import Point
 point = Point(0.0,0.0)
@@ -18,9 +18,9 @@ point.y
 Point(point)
 
 #xian
-class LineString(coordinates)
+# class LineString(coordinates)
 
-from shapely.geometry import
+from shapely.geometry import LineString
 line = LineString([(0,0),(1,1)])
 print(line.area)
 print(line.length)
@@ -32,29 +32,31 @@ point.coords[1:]
 LineString(line)
 
 #mian
-class Polygon(exterior[,interiors =none])
+# class Polygon(exterior[,interiors =none])
 
 from shapely.geometry import Polygon
 polygon =Polygon([(0,0),(1,1),(1,0)])
 polygon.area
 polygon.length
 polygon.bounds
-list(polygon.exteriors.coords)
+list(polygon.exterior.coords)
 list(polygon.interiors)
 coords = [(0,0),(1,1),(1,0)]
+
+from shapely.geometry import LinearRing
 r = LinearRing(coords)
-s = Polyfon(r)
+s = Polygon(r)
 s.area
 t = Polygon(s.buffer(1.0).exterior,[r])
 t.area
 
-shapely.geometry.box(minx,miny,maxx,maxy,ccw=True)
+# shapely.geometry.box(minx,miny,maxx,maxy,ccw=True)
 
-from shapely.geometry import
+from shapely.geometry import box
 b = box(0.0,0.0,1.0,1.0)
 list(b.exterior.coords)
 
-shapely.geometry.polygon.orient(polyfon,sign=1.0)
+# shapely.geometry.polygon.orient(polyfon,sign=1.0)
 
 #duixianzhuang
 import os
@@ -63,8 +65,8 @@ import shapely
 import shapely.geometry
 
 from shapely.ops import cascaded_union
-driver = ogr.GeometryByName('ESRI Shapefile')
-out_shp ='world_borders.shp'
+driver = ogr.GetDriverByName('ESRI Shapefile')
+out_shp ='x_world_borders.shp'
 if os.path.exists(out_shp):
     driver.DeleteDataSource(out_shp)
 
@@ -76,25 +78,26 @@ ds = ogr.Open('world_borders.shp')
 layer = ds.GetLayer(0)
 feat = layer.GetNextFeature()
 while feat:
-    geom = featGetGeometryRef()
+    geom = feat.GetGeometryRef()
     pts = geom.GetGeometryCount()
     for ii in range(pts):
-        poly = geom.GetPointCount()
+        poly = geom.GetGeometryRef(ii)
         points_num = poly.GetPointCount()
-        print(points_num)
+        # print(points_num)
         zc_points = poly.GetPoints()
-        print(type(zc_points))
+        # print(type(zc_points))
         tmp_pt_arr = []
         for x in zc_points:
             tmp_pt_arr.append(x)
+        
         pt = shapely.geometry.LineString(tmp_pt_arr)
         vv = pt.buffer(3000.0)
         new_feat = ogr.Feature(layernew.GetLayerDefn())
         tmp_wkb = vv.to_wkb()
-        new_geom = ogr.CreateGeometryFronWkb(tmp_wkb)
-        new-feat.SetGeometry(new_geom)
+        new_geom = ogr.CreateGeometryFromWkb(tmp_wkb)
+        new_feat.SetGeometry(new_geom)
         layernew.CreateFeature(new_feat)
-
+    
     feat = layer.GetNextFeature()
 
 newds.Destroy()

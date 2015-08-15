@@ -2,6 +2,8 @@
 import os
 os.chdir('/home/liujx/gdata')
 
+from shapely.geometry import Point, LineString, LinearRing, Polygon,  MultiLineString
+
 coords = [((0,0),(1,1)),((-1,0),(1,0))]
 lines = MultiLineString(coords)
 lines.boundary
@@ -15,16 +17,10 @@ a = Point(1,1).buffer(1.5)
 b = Point(2,1).buffer(1.5)
 a.difference(b)
 
-a = Point(1,1).buffer(1.5)
-b = Point(2,1).buffer(1.5)
 a.intersection(b)
 
-a = Point(1,1).buffer(1.5)
-b = Point(2,1).buffer(1.5)
-a.symmetic_difference(b)
+a.symmetric_difference(b)
 
-a = Point(1,1).buffer(1.5)
-b = Point(2,1).buffer(1.5)
 a.union(b)
 
 a.union(b).boundary

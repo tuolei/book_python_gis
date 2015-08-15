@@ -2,6 +2,7 @@
 import os
 os.chdir('/home/liujx/gdata')
 
+from shapely.geometry import LineString
 line = LineString()
 line.is_empty
 line.length

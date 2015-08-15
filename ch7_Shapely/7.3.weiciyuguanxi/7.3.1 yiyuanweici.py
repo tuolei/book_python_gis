@@ -3,6 +3,7 @@ import os
 os.chdir('/home/liujx/gdata')
 
 #yibande
+from shapely.geometry import Point, LineString, LinearRing
 Point(0,0).has_z
 Point(0,0,0).has_z
 
@@ -17,11 +18,11 @@ Point().is_empty
 Point(0,0).is_empty
 
 from operator import attrgetter
-empties = filter(attrgetter('is_empty'),[Point(),Point(0,0)])
+empties = filter(attrgetter('is_empty'),[Point(),Point(0,0), Point(1,2,3)])
 len(empties)
 
 LineString([(0,0),(1,1),(1,-1)]).is_ring
-LinearString([(0,0),(1,1),(1,-1)]).is_ring
+LinearRing([(0,0),(1,1),(1,-1)]).is_ring
 
 LineString([(0,0),(1,1),(1,-1),(0,1)]).is_simple
 
@@ -36,9 +37,11 @@ def validata(func):
             raise TopologicalError(Given aruments do not determine a valid geometic object)
         return ob
     return wrapper
+
 validate
 def ring(coordinates):
     return LinearRing(coordinates)
+
 coords = [(0,0),(1,1),(1,-1),(0,1)]
 ring(coords)
 
