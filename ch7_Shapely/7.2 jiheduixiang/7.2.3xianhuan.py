@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 import os
-os.chdir('/home/liujx/gdata')
+# os.chdir('/home/liujx/gdata')
 
-from shapely.Geometry.polygon
-import LinearRing
+from shapely.geometry.polygon import LinearRing
 ring = LinearRing([(0,0),(1,1),(1,0)])
 ring.area
 ring.length

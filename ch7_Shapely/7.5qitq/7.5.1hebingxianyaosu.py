@@ -2,7 +2,10 @@
 import os
 os.chdir('/home/liujx/gdata')
 
-from shapely.ops. import polygonize
+from shapely.geometry import Point, LineString, LinearRing, Polygon,  MultiLineString, MultiPoint
+
+
+from shapely.ops import polygonize
 lines = [
     ((0,0),(1,1)),
     ((0,0),(0,1)),
