@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 import os
-os.chdir('/home/liujx/gdata')
+#os.chdir('/home/liujx/gdata')
 
 import gdal
 from osgeo import gdal
+
 try:
     import gdal
 except:
