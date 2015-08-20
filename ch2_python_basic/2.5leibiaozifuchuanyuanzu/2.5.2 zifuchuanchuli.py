@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
-os.chdir('/home/liujx/gdata')
+#os.chdir('/home/liujx/gdata')
 
 path = r'e:book'
 print(path)
@@ -17,11 +17,11 @@ val = int('42')
 print(val)
 val = str(42)
 print(val)
-val = filoat('42.0')
+val = float('42.0')
 print(val)
 
 print(ord('s'))
-print(type(orrd('s')))
+print(type(ord('s')))
 print(chr(115))
 print(type(chr(115)))
 
@@ -40,7 +40,7 @@ s = s.replace('pl','pa')
 
 s = 'abcdefg'
 print(s[1:])
-print(s[1;1])
+print(s[1:1])
 
 str_val = 'abcd'
 str_val = str_val.capitalize()
@@ -50,7 +50,7 @@ str_val= str_val.lower
 print(str_val)
 
 print(str_val.isalpha())
-print(str_val.isdidit())
+print(str_val.isdigit())
 
 str_val = 'abcdfgxabcdyzcdba'
 str_val = str_val.strip()

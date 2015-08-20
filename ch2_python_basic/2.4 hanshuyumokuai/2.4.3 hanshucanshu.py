@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import os
-os.chdir('/home/liujx/gdata')
+#os.chdir('/home/liujx/gdata')
 
-def say(message,time = 1):
+def say(message,times = 1):
     print(message * times)
 
 say('Hello')

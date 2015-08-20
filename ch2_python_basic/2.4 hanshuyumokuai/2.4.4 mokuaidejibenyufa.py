@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 import os
-os.chdir('/home/liujx/gdata')
+#os.chdir('/home/liujx/gdata')
 
 import os
 def print_file_path(indir):
-    for wroot,wdirs,wfile in os.walk(indir):
+    for wroot,wdirs,wfiles in os.walk(indir):
         for wfile in wfiles:
             (file_name,file_ext) = os.path.splitext(wfile)
             if ('wx' in file_name) and (file_ext == '.py'):
@@ -15,7 +15,7 @@ if __name__ == '__main__':
     print_file_path(inws)
 
 from math import *
-def math_demo();
+def math_demo():
     x = 3
     y = 4
     z = sqrt(pow(x,2)+ pow(y,2))

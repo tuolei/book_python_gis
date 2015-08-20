@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
-os.chdir('/home/liujx/gdata')
+#os.chdir('/home/liujx/gdata')
 
 def func(x):
     print('x i',x)

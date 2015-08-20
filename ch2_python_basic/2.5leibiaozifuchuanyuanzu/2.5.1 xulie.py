@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
-os.chdir('/home/liujx/gdata')
+#os.chdir('/home/liujx/gdata')
 
 list_val = [1,'3',5,'4']
 
@@ -13,6 +13,10 @@ list_val.append(6)
 print(list_val)
 
 print('=' * 8)
+list_val = list_val + [7,8]
+print(list_val)
+
+print('=' * 8)
 list_val.extend([9,10])
 print(list_val)
 
@@ -21,7 +25,7 @@ list_val.insert(5,5)
 print(list_val)
 
 print('=' * 8)
-list_val = list_val.pop()
+tep_a = list_val.pop()
 print(list_val)
 print(tep_a)
 
@@ -31,11 +35,7 @@ print(list_val)
 print(tep_a)
 
 print('=' * 8)
-list_val = list_val + [7,8]
-print(list_val)
-
-print('=' * 8)
-list_val = list_val.index(3)
+val_index = list_val.index(3)
 print(list_val)
 print(val_index)
 
@@ -45,14 +45,14 @@ print(list_val)
 print(val_index)
 
 print('=' * 8)
-for val in list_val
+for val in list_val:
     print(val)
 
 print('=' * 8)
 print(len(list_val))
 
 print('=' * 8)
-list_valsort()
+list_val.sort()
 print(list_val)
 
 print('=' * 8)

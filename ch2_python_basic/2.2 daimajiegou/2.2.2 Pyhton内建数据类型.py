@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
-os.chdir('/home/liujx/gdata')
+#os.chdir('/home/liujx/gdata')
 
 import math
 int_a = 3
@@ -21,8 +21,6 @@ com_i = int_a + int_b * 1j
 
 print(abs(com_i))
 print(math.sqrt(int_a ** 2 + int_b ** 2))
-
-print(math.pow(math.e math.pi * (0+1j)) + 1)
 
 print('abcd')
 print("abcd")
