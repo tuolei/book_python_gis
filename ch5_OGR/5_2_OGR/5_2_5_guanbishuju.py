@@ -2,6 +2,6 @@
 import os
 os.chdir('/home/liujx/gdata')
 
-feature.Destroy()
+feat.Destroy()
 
-dataSourece.Destroy()
+datasource.Destroy()

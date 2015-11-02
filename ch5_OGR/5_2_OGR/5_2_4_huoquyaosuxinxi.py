@@ -7,30 +7,31 @@ inshp='world_borders.shp'
 datasource = ogr.Open(inshp)
 layer = datasource.GetLayer(0)
 feature = layer.GetFeature(0)
-print(feature.GetField('Name'))
 
+##############
+
+layer.ResetReading()
 feat = layer.GetNextFeature()
 while feat:
     feat = layer.GetNextFeature()
-
+##############
 layer.ResetReading()
-
 feat=layer.GetFeature(0)
 feat.keys()
-fid=feat.GetField('AREA')
-print(fid)
+feat.GetField('CNTRY_NAME')
 
-for i in range(feature.GetFieldCount()):
-    print(feature.GetField(i))
+##################
+for i in range(feat.GetFieldCount()):
+    print(feat.GetField(i))
 
-geom = feature.GetGeometryRef()
+##############################
+geom = feat.GetGeometryRef()
 geom.GetGeometryName()
-geom .GetGeometryCount()
+geom.GetGeometryCount()
 geom.GetPointCount()
-geom.GetX()
-geom.GetY()
-print(geom)
-print(geom.ExportToWkt())
+geom.ExportToWkt()
+
+###############################
 polygon=geom.GetGeometryRef(0)
 polygon.GetGeometryName()
 polygon.GetGeometryCount()
@@ -38,4 +39,4 @@ polygon.GetPointCount()
 polygon.GetX(0)
 polygon.GetY(0)
 polygon.GetZ(0)
-print(polygon.ExportToWkt())
+polygon.ExportToWkt()

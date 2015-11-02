@@ -6,13 +6,14 @@ os.chdir('/home/liujx/gdata')
 import os
 from osgeo import ogr
 driver=ogr.GetDriverByName('ESRI Shapefile')
-out_shp = 'world_borders.shp'
+out_shp = 'xx_world_borders.shp'
 if os.path.exists(out_shp):
     driver.DeleteDataSource(out_shp)
 
+############
 ds =driver.CreateDataSource(out_shp)
 layer=ds.CreateLayer('test',geom_type=ogr.wkbPoint)
-
+############
 fieldDefn = ogr.FieldDefn('id',ogr.OFTString)
 fieldDefn.SetWidth(4)
 layer.CreateField(fieldDefn)
