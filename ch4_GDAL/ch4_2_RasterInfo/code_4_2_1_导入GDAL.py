@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 import os
-#os.chdir('/home/liujx/gdata')
-
 import gdal
 from osgeo import gdal
 
@@ -10,6 +8,7 @@ try:
 except:
     from osgeo import gdal
 
+from osgeo.gdalconst import *
 
 gdal.AllRegister()
 driver = gdal.GetDriverByName('HFA')

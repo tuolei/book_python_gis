@@ -1,6 +1,0 @@
->>> dst_ds = driver.CreateCopy(dst_filename2,src_ds,0,['TILED = YES','COMPRESS=PACKBITS'])
-Warning 6: Driver GTiff does not support TILED  creation option
->>> dst_filename3 = "m510121_copy3.tif"
->>> dst_ds = driver.CreateCopy(dst_filename3,src_ds,0,['TILED = YES','COMPRESS=PACKBITS'])
-Warning 6: Driver GTiff does not support TILED  creation option
-

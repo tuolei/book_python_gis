@@ -1,12 +1,8 @@
 # -*- coding: utf-8 -*-
-import os
-os.chdir('/home/liujx/gdata')
 
 from osgeo import gdal
-dataset = gdal.Open("m510121.tif")
+dataset = gdal.Open('/gdata/lu75c.tif')
 dataset.RasterCount
-band = dataset.GetRasterBand(3)
-
 band = dataset.GetRasterBand(1)
 dir(band)
 
