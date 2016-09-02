@@ -1,11 +1,11 @@
-from pysqlite2 import dbapi2 as sqlite
-db = sqlite.connect("myDatabase2.db")
+import sqlite3 as sqlite
+db = sqlite.connect(':memory:')
 db.enable_load_extension(True)
-
 db.execute('SELECT load_extension("libspatialite.so.5")')
 
+
 cursor = db.cursor()
-# cursor.execute('SELECT InitSpatialMetaData();')
+cursor.execute('SELECT InitSpatialMetaData();')
 
 
 cursor.execute("DROP TABLE IF EXISTS cities")
@@ -14,7 +14,7 @@ cursor.execute("CREATE TABLE cities (" +
     "name CHAR(255))")
 
 # cursor.execute("CREATE INDEX gshhs_level on gshhs(level)")
-cursor.execute("SELECT AddGeometryColumn('cities', 'geom', 4326, 'POLYGON', 2)")    
+cursor.execute("SELECT AddGeometryColumn('cities', 'geom', 4326, 'POLYGON', 2)")
 cursor.execute("SELECT CreateSpatialIndex('cities', 'geom')")
 
 cursor.execute("INSERT INTO cities (name, geom)" + \
