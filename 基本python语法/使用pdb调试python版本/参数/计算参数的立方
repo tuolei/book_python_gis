@@ -1,8 +1,0 @@
-def Cube ( x= 5):
-    return x**3
-Cube(2)
-8
-Cube
-<function Cube at 0x7f57b7a80840>
-Cube()
-125

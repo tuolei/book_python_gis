@@ -1,8 +1,0 @@
-def fun (x,y,z,):
-    return x+y-z
-
-fun(1,2,3)
-0
-fun (z = 1,x = 2, y = 3)
-4
-
