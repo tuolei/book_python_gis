@@ -4,7 +4,7 @@ import config
 from osgeo import gdal
 
 os.chdir(config.gisws)
-dataset = gdal.Open("K52E015007.tif")
+dataset = gdal.Open("foo.tif")
 dataset.GetMetadata()
 
 ds = gdal.Open('lu75c.tif')

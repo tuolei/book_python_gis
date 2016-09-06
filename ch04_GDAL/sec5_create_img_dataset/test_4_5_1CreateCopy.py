@@ -1,0 +1,32 @@
+# -*- coding: utf-8 -*-
+import os
+from osgeo import gdal
+import config
+
+os.chdir(config.gisws)
+
+driver = gdal.GetDriverByName("GTiff")
+
+src_filename = "foo.tif"
+dst_filename = "x_foo_copy.tif"
+src_ds = gdal.Open(src_filename)
+dst_ds = driver.CreateCopy(dst_filename,src_ds,0)
+
+dst_filename2 = "x_foo_copy2.tif"
+dst_ds = driver.CreateCopy(dst_filename2,src_ds,0,['TILED = YES','COMPRESS=PACKBITS'])
+
+dst_filename3 = "x_foo_copy3.tif"
+dst_ds = driver.CreateCopy(dst_filename3,src_ds,0,['TILED = YES','COMPRESS=PACKBITS'])
+
+dataset = gdal.Open("foo.tif")
+width = dataset.RasterXSize
+height = dataset.RasterYSize
+data = dataset.ReadAsArray(0,0,width,height)
+driver = gdal.GetDriverByName("Gtiff")
+driver.CreateCopy("xx_foo5.tif", dataset)
+
+
+def Test():
+    assert True
+
+

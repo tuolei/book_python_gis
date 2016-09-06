@@ -10,7 +10,7 @@ dir(gdalconst)
 
 
 from osgeo import gdal
-dataset = gdal.Open("K52E015007.tif")
+dataset = gdal.Open("foo.tif")
 dataset.ReadAsArray(30,70,5,5).tostring()
 dataset.ReadRaster(30,70,5,5)
 print('=' * 20)
@@ -18,7 +18,8 @@ band = dataset.GetRasterBand(1)
 print(band.DataType)
 
 from PIL import Image
-im = Image.open("K52E015007.tif")
+# Todo: will echo waring if the image is big.
+im = Image.open("foo.tif")
 # region = im.crop((30,70,35,75))
 # region.tostring()
 

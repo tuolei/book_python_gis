@@ -1,6 +1,0 @@
-访问数据
-
-使用自省函数help():
-help(band.ReasterAsArray)
-help(band.ReadRaster)
-

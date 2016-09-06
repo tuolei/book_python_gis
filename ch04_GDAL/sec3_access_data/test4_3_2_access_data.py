@@ -5,7 +5,7 @@ import config
 os.chdir(config.gisws)
 
 from osgeo import gdal
-dataset = gdal.Open("K52E015007.tif")
+dataset = gdal.Open("foo.tif")
 help(dataset.ReadRaster)
 help(dataset.ReadAsArray)
 

@@ -6,10 +6,10 @@ import config
 os.chdir(config.gisws)
 from osgeo import gdal
 
-dataset = gdal.Open("K52E015007.tif")
+dataset = gdal.Open("foo.tif")
 
 
 def Test():
 
-    assert os.path.exists( os.path.join(config.gisws, "K52E015007.tif" ))
+    assert os.path.exists( os.path.join(config.gisws, "foo.tif" ))
     assert dataset
