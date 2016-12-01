@@ -51,3 +51,7 @@ while feature is not None:
     feature = layer.GetNextFeature()
 
 newds.Destroy()
+
+
+def Test():
+    assert True

@@ -38,3 +38,6 @@ ds.Destroy()
 # def Test():
 #     assert ds
 #     assert layer
+
+def Test():
+    assert True

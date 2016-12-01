@@ -19,3 +19,5 @@ feature.Destroy()
 datasource.Destroy()
 
 
+def Test():
+    assert True

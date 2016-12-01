@@ -29,3 +29,6 @@ print(world_layer.GetFeatureCount())
 
 out_shp = 'sel_res.shp'
 create_shp_by_layer(out_shp,world_layer)
+
+def Test():
+    assert True

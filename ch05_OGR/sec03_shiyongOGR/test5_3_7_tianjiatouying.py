@@ -34,3 +34,6 @@ targetSR.MorphToESRI()
 file = open('xx_test.prj','w')
 file.write(targetSR.ExportToWkt())
 file.close()
+
+def Test():
+    assert True

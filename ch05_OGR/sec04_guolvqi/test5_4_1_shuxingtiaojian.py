@@ -28,3 +28,6 @@ while feat is not None:
     layernew.CreateFeature(feat)
     feat = layer.GetNextFeature()
 newds.Destroy()
+
+def Test():
+    assert True

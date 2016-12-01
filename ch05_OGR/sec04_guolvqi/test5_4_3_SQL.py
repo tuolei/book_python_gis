@@ -30,3 +30,7 @@ while resultFeat:
 out_shp = 'xx_world_borders.shp'
 create_shp_by_layer(out_shp,result)
 world_ds.ReleaseResultSet(result)
+world_ds.Destroy()
+
+def Test():
+    assert True

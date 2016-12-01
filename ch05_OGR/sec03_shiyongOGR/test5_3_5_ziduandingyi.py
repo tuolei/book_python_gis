@@ -25,7 +25,7 @@ layernew.CreateField(fieldcnstr)
 fieldf = ogr.FieldDefn("f",ogr.OFTReal)
 layernew.CreateField(fieldf)
 
-wkt = 'POLYGON ((%f %f %f %f %f %f %f %f %f %f ))' % (extent[0],extent[3],extent[1],extent[3],extent[1],extent[2],extent[0],extent[2],extent[0],extent[3])
+wkt = 'POLYGON ((%f %f, %f %f, %f %f, %f %f, %f %f ))' % (extent[0],extent[3],extent[1],extent[3],extent[1],extent[2],extent[0],extent[2],extent[0],extent[3])
 
 geom = ogr.CreateGeometryFromWkt(wkt)
 feat = ogr.Feature(layernew.GetLayerDefn())

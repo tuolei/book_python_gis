@@ -22,10 +22,9 @@ datas = []
 for i in range(3):
     band = dataset.GetRasterBand(i+1)
     data = band.ReadAsArray(0,0,width,height)
-    datas.append(numpy.reshape(data,(1,-1)))
+    # datas.append(numpy.reshape(data,(1,-1)))
     # atas = numpy.concatenate(datas)
-
-datas = numpy.concatenate(datas)
+    datas = numpy.concatenate(data)
 
 
 def Test():
