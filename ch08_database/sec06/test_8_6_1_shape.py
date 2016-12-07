@@ -1,32 +1,27 @@
 # -*- coding: utf-8 -*-
-import os
+
 import shutil
 import sqlite3 as sqlite
 
-import config
-
-os.chdir(config.gisws)
-shutil.copy("test-2.3.sqlite", 'xx_new_db.sqlite')
-
-conn = sqlite.connect('xx_new_db.sqlite')
+shutil.copy("./gdata/test-2.3.sqlite", './gdata/xx_new_db.sqlite')
+conn = sqlite.connect('./gdata/xx_new_db.sqlite')
 
 conn.enable_load_extension(True)
-conn.execute('SELECT load_extension("libspatialite.so.5")')
+conn.execute('SELECT load_extension("mod_spatialite.so.7")')
 cur = conn.cursor()
 
+sql = 'create virtual table uu using virtualshape("./gdata/shape_towns", cp1252, 32632)'
+cur.execute(sql)
 
-sql  = 'create virtual table uu using virtualshape(shape_towns, cp1252, 32632)'
-res = cur.execute(sql)
-sql2 = 'select * from uu'
-res2 = cur.execute(sql2)
-for rec in res2:
-    # print(rec)
-    pass
+cur.execute('PRAGMA table_info(uu)')
+[print(rec) for rec in cur]
 
-sql2  = '''SELECT PK_UID, Name, Peoples, AsText(Geometry)
+cur.execute('SELECT PK_UID, Name, Peoples, AsText(Geometry) FROM uu LIMIT 5')
+[print(rec) for rec in cur]
+
+sql2 = '''SELECT PK_UID, Name, Peoples, AsText(Geometry)
     FROM uu WHERE Peoples > 350000 ORDER BY Name;'''
-res3 = cur.execute(sql2)
+cur.execute(sql2)
+[print(rec) for rec in cur]
 
-for rec in res3:
-    print(rec)
-
+cur.execute('DROP TABLE uu')

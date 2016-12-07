@@ -26,3 +26,5 @@ a.union(b)
 a.union(b).boundary
 a.boundary.union(b.boundary)
 
+def Test():
+    assert True

@@ -1,32 +1,34 @@
 # -*- coding: utf-8 -*-
-import os
-import shutil
+
 import sqlite3 as sqlite
 
-import config
+db = sqlite.connect(':memory:')
+db.enable_load_extension(True)
+db.execute('SELECT load_extension("mod_spatialite.so.7")')
 
-os.chdir(config.gisws)
-shutil.copy("test-2.3.sqlite", 'xx_new_db.sqlite')
+cursor = db.cursor()
+cursor.execute('BEGIN')
+cursor.execute('SELECT InitSpatialMetaData();')
+cursor = cursor.execute('SELECT * FROM spatial_ref_sys LIMIT 5;')
+[print(rec) for rec in cursor]
+cursor.close()
+db.close()
 
-conn = sqlite.connect('xx_new_db.sqlite')
+################
+import shutil
+shutil.copy("./gdata/test-2.3.sqlite", './gdata/xx_new_db.sqlite')
+conn = sqlite.connect('./gdata/xx_new_db.sqlite')
 
 conn.enable_load_extension(True)
-conn.execute('SELECT load_extension("libspatialite.so.5")')
-cur = conn.cursor()
+conn.execute('SELECT load_extension("mod_spatialite.so.7")')
+cursor = conn.cursor()
+
+cursor.execute("select name from sqlite_master where type='table' order by name;")
+[print(rec) for rec in cursor]
 
 
-
-recs = cur.execute("select name from sqlite_master where type='table' order by name;")
-
-for rec in recs:
-    print(rec)
-
-print('=' * 20)
-print('PRAGMA')
-cursor = cur
-recs = cursor.execute("PRAGMA table_info( Towns)")
-for rec in recs:
-    print(rec)
+cursor.execute("PRAGMA table_info( Towns)")
+[print(rec) for rec in cursor]
 
 # 创建新表
 
@@ -43,17 +45,25 @@ for rec in recs:
 # "insert into tagTable select * from sourceTable;"
 
 
-print('=' * 20)
-print('spatial_ref_sys')
-recs = cur.execute('SELECT * FROM spatial_ref_sys LIMIT 5;')
-
-for rec in recs:
-    print(rec)
+# spatial_ref_sys
+cursor = cursor.execute('SELECT * FROM spatial_ref_sys LIMIT 5;')
+[print(rec) for rec in cursor]
 
 
 
+# 空间参考信息
+cursor = cursor.execute('SELECT DISTINCT Srid(geometry) FROM Towns;')
+[print(rec) for rec in cursor]
 
-recs = cur.execute('SELECT DISTINCT Srid(geometry) FROM Towns;')
+cursor = cursor.execute('''SELECT DISTINCT SRID(Towns.geometry), spatial_ref_sys.ref_sys_name FROM Towns,
+        spatial_ref_sys WHERE SRID(Towns.geometry) = spatial_ref_sys.srid;''')
+[print(rec) for rec in cursor]
 
-for rec in recs:
-    print(rec)
+# 创建
+
+cursor.execute('BEGIN')
+cursor.execute("SELECT AddGeometryColumn('Towns', 'wgs84', 4326, 'POINT', 2)")
+cursor.execute("UPDATE Towns SET wgs84 = Transform(geometry, 4326);")
+conn.commit()
+cursor.execute('SELECT AsText(geometry), Srid(geometry),AsText(wgs84), Srid(wgs84) FROM Towns LIMIT 5;')
+[print(rec) for rec in cursor]

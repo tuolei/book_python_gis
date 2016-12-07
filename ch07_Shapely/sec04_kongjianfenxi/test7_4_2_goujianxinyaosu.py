@@ -40,3 +40,6 @@ len(x.exterior.coords)
 s = x.simplify(0.05,preserve_topology=False)
 s.area
 len(s.exterior.coords)
+
+def Test():
+    assert True

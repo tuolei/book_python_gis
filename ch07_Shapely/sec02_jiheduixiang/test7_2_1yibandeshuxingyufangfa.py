@@ -5,28 +5,28 @@ import config
 
 os.chdir(config.gisws)
 
-
 from shapely.geometry import Point
-Point(0,0).geom_type
 
-Point(0,0).distance(Point(1,1))
+Point(0, 0).geom_type
 
-donut = Point(0,0).buffer(2,0).difference(Point(0,0).buffer(1.0))
+Point(0, 0).distance(Point(1, 1))
+
+donut = Point(0, 0).buffer(2, 0).difference(Point(0, 0).buffer(1.0))
 donut.centroid.wkt
 donut.representative_point().wkt
 
-#duidianzhuang
+# duidianzhuang
 import os
 from osgeo import ogr
 import shapely.geometry
 
 driver = ogr.GetDriverByName('ESRI Shapefile')
-out_shp ='xx_world_borders.shp'
+out_shp = 'xx_world_borders.shp'
 if os.path.exists(out_shp):
     driver.DeleteDataSource(out_shp)
 
 newds = driver.CreateDataSource(out_shp)
-layernew = newds.CreateLayer('rect',None,ogr.wkbPolygon)
+layernew = newds.CreateLayer('rect', None, ogr.wkbPolygon)
 
 ds = ogr.Open('world_borders.shp')
 

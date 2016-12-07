@@ -66,3 +66,6 @@ while feat:
 
 newds.Destroy()
 
+
+def Test():
+    assert True

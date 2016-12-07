@@ -1,21 +1,22 @@
 # -*- coding: utf-8 -*-
 import sqlite3 as sqlite
 import os
-import config
+# import config
 import time
-os.chdir(config.gisws)
+# os.chdir(config.gisws)
 
 # 这个地方注意，使用挂载的Windows，有问题。
-spt_file = "/home/bk/tmp/xx_myDatabase2.sqlite"
+spt_file = "/home/bk/xx_myDatabase2.sqlite"
+# spt_file = "./xx_myDatabase2.sqlite"
 if os.path.exists(spt_file):
     os.remove(spt_file)
 
 db = sqlite.connect(spt_file)
 db.enable_load_extension(True)
-db.execute('SELECT load_extension("libspatialite.so.5")')
+db.execute('SELECT load_extension("mod_spatialite.so.7")')
 cursor = db.cursor()
 
-
+cursor.execute('BEGIN')
 cursor.execute('SELECT InitSpatialMetaData();')
 
 cursor.execute("DROP TABLE IF EXISTS gshhs")

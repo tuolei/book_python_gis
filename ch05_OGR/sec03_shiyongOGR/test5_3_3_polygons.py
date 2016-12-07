@@ -4,27 +4,27 @@ import config
 
 os.chdir(config.gisws)
 
-
-
 # 创建多边形数据集
 from osgeo import ogr
-import os,math
+import os, math
+
 driver = ogr.GetDriverByName("ESRI Shapefile")
 
 extfile = 'xx_3woeld_borders.shp'
-if os.access(extfile,os.F_OK):
+if os.access(extfile, os.F_OK):
     driver.DeleteDataSource(extfile)
 
-extent=[400,1100,300,600]
+extent = [400, 1100, 300, 600]
 
 newds = driver.CreateDataSource(extfile)
-layernew = newds.CreateLayer('rect',None,ogr.wkbPolygon)
-width = math.fabs(extent[1]-extent[0])
-height = math.fabs(extent[3]-extent[3])
-tw = width/2
-th = width/2
-extnew = extent[0]+tw
-wkt = 'POLYGON ((%f %f, %f %f, %f %f, %f %f, %f %f ))' % (extent[0],extent[3],extent[1],extent[3],extent[1],extent[2],extent[0],extent[2],extent[0],extent[3])
+layernew = newds.CreateLayer('rect', None, ogr.wkbPolygon)
+width = math.fabs(extent[1] - extent[0])
+height = math.fabs(extent[3] - extent[3])
+tw = width / 2
+th = width / 2
+extnew = extent[0] + tw
+wkt = 'POLYGON ((%f %f, %f %f, %f %f, %f %f, %f %f ))' % (
+extent[0], extent[3], extent[1], extent[3], extent[1], extent[2], extent[0], extent[2], extent[0], extent[3])
 
 geom = ogr.CreateGeometryFromWkt(wkt)
 feat = ogr.Feature(layernew.GetLayerDefn())

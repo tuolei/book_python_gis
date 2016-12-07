@@ -10,3 +10,5 @@ prepared_polygon = prep(polygon)
 prepared_polygon
 hits = filter(prepared_polygon.contains,points)
 
+def Test():
+    assert True

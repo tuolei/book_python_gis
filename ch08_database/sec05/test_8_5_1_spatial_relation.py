@@ -11,7 +11,7 @@ shutil.copy("test-2.3.sqlite", 'xx_new_db.sqlite')
 conn = sqlite.connect('xx_new_db.sqlite')
 
 conn.enable_load_extension(True)
-conn.execute('SELECT load_extension("libspatialite.so.5")')
+conn.execute('SELECT load_extension("mod_spatialite.so.7")')
 cur = conn.cursor()
 
 recs = cur.execute("SELECT count (*) FROM Towns;")

@@ -17,3 +17,7 @@ print(list(polygonize(lines)))
 
 from shapely.ops import linemerge
 linemerge(lines)
+
+
+def Test():
+    assert True
