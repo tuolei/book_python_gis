@@ -1,11 +1,5 @@
 # -*- coding: utf-8 -*-
-'''
-Tested under Debian Jessie.
 
-'''
-import os
-
-# huanchongyigedian
 from shapely.geometry import Point
 
 point = Point(10, 10)

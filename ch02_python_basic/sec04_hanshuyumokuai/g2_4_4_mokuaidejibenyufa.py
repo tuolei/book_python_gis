@@ -2,7 +2,6 @@
 
 import os
 
-
 def print_file_path(indir):
     for wroot, wdirs, wfiles in os.walk(indir):
         for wfile in wfiles:
@@ -11,10 +10,6 @@ def print_file_path(indir):
                 filepath = os.path.join(wroot.wfile)
                 print(filepath)
 
-
-if __name__ == '__main__':
-    inws = '/home/bk/progs'
-    print_file_path(inws)
 
 from math import *
 
@@ -27,4 +22,6 @@ def math_demo():
 
 
 if __name__ == '__main__':
+    inws = '/home/bk/progs'
+    print_file_path(inws)
     math_demo()

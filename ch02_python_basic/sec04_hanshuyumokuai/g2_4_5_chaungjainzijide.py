@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-import os
-#os.chdir('/home/liujx/gdata')
 
 def sayhi():
     print('Hi ,this is mymodule apeaking.')

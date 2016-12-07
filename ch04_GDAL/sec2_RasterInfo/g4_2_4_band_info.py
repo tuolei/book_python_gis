@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 import os
-import config
 
-os.chdir(config.gisws)
+
 
 from osgeo import gdal
-dataset = gdal.Open('lu75c.tif')
+dataset = gdal.Open('gdata/lu75c.tif')
 dataset.RasterCount
 band = dataset.GetRasterBand(1)
 dir(band)

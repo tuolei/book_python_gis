@@ -1,13 +1,10 @@
 # -*- coding: utf-8 -*-
 import os
 from osgeo import gdal
-import config
-
-os.chdir(config.gisws)
 
 
 driver = gdal.GetDriverByName('GTiff')
-dst_filename =  'tmp.tif'
+dst_filename =  'gdata/tmp.tif'
 dst_ds = driver.Create(dst_filename,512,512,1,gdal.GDT_Byte)
 
 
@@ -21,5 +18,3 @@ raster = numpy.zeros((512,512))
 dst_ds.GetRasterBand(1).WriteArray(raster)
 
 
-def Test():
-    assert True

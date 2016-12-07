@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 import os
-import config
+
 from osgeo import gdal
 
-os.chdir(config.gisws)
-dataset = gdal.Open("foo.tif")
+
+dataset = gdal.Open("gdata/foo.tif")
 dataset.GetMetadata()
 
-ds = gdal.Open('lu75c.tif')
+ds = gdal.Open('gdata/lu75c.tif')
 ds.GetMetadata()
 
 dataset.GetDescription()
@@ -22,11 +22,7 @@ dataset.GetProjection()
 
 driver = gdal.GetDriverByName('HDF5')
 driver.Register()
-mds = gdal.Open("MOD09A1.A2009193.h28v06.005.2009203125525.hdf")
+mds = gdal.Open("gdata/MOD09A1.A2009193.h28v06.005.2009203125525.hdf")
 mds.RasterCount
 
 
-def Test():
-    assert dataset
-    assert ds
-    assert mds

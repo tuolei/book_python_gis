@@ -1,13 +1,8 @@
 # -*- coding: utf-8 -*-
-import os
-
-import config
-
-os.chdir(config.gisws)
 
 from osgeo import gdal
 
-dataset = gdal.Open("foo.tif")
+dataset = gdal.Open("gdata/foo.tif")
 
 import time
 
@@ -21,19 +16,19 @@ bxsize = int(width / bw) - 10
 bysize = int(width / bh) - 10
 start = time.time()
 band.ReadAsArray(0, 0, width, height)
-print (time.time() - start)
+print(time.time() - start)
 start2 = time.time()
 for i in range(bysize):
     for j in range(bxsize):
         band.ReadAsArray(bw * j, bh * i, bw, bh)
 
-print (time.time() - start2)
+print(time.time() - start2)
 start3 = time.time()
 for j in range(bxsize):
     for i in range(bysize):
         band.ReadAsArray(bw * j, bh * i, bw, bh)
 
-print (time.time() - start3)
+print(time.time() - start3)
 
 
 def Test():

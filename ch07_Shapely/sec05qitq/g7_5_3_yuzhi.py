@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import os
 
 
 from shapely.geometry import Point
@@ -9,6 +8,3 @@ polygon = Point(0.0,0.0).buffer(1,0)
 prepared_polygon = prep(polygon)
 prepared_polygon
 hits = filter(prepared_polygon.contains,points)
-
-def Test():
-    assert True

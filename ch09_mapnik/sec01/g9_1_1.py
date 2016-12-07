@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 import os
-import config
-
-os.chdir(config.gisws)
 
 import mapnik
 # mapnik.Color('y')

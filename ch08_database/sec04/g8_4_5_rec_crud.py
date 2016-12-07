@@ -3,12 +3,10 @@ import os
 import shutil
 import sqlite3 as sqlite
 
-import config
 
-os.chdir(config.gisws)
-shutil.copy("test-2.3.sqlite", 'xx_new_db.sqlite')
+shutil.copy("gdata/test-2.3.sqlite", 'gdata/xx_new_db.sqlite')
 
-conn = sqlite.connect('xx_new_db.sqlite')
+conn = sqlite.connect('gdata/xx_new_db.sqlite')
 
 conn.enable_load_extension(True)
 conn.execute('SELECT load_extension("mod_spatialite.so.7")')

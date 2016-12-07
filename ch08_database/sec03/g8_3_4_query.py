@@ -2,11 +2,8 @@
 import os
 import sqlite3 as sqlite
 
-import config
 
-os.chdir(config.gisws)
-
-db = sqlite.connect("/home/bk/tmp/xx_myDatabase2.sqlite")
+db = sqlite.connect("gdata/xx_myDatabase2.sqlite")
 db.enable_load_extension(True)
 db.execute('SELECT load_extension("libspatialite.so.5")')
 cursor = db.cursor()

@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 import sqlite3 as sqlite
 import os
-# import config
-import time
-# os.chdir(config.gisws)
+
+
 
 # 这个地方注意，使用挂载的Windows，有问题。
-spt_file = "/home/bk/xx_myDatabase2.sqlite"
+spt_file = "gdata/xx_myDatabase2.sqlite"
 # spt_file = "./xx_myDatabase2.sqlite"
 if os.path.exists(spt_file):
     os.remove(spt_file)

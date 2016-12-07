@@ -1,15 +1,12 @@
 #!/usr/bin/env python
 
 import os
-import sys
-print(sys.path[0])
+import mapnik
 
 curpath = os.path.split(os.path.realpath(__file__))[0]
 
-import mapnik
-
-stylesheet =  os.path.join(curpath, 'world_population.xml')
-image = os.path.join(curpath, 'xworld_style.png')
+stylesheet = os.path.join(curpath, 'world_population.xml')
+image = 'x_world_style.png'
 m = mapnik.Map(600, 300)
 mapnik.load_map(m, stylesheet)
 m.zoom_all()

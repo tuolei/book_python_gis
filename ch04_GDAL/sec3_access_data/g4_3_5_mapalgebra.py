@@ -1,14 +1,11 @@
 # -*- coding: utf-8 -*-
 import os
 
-import config
-
-os.chdir(config.gisws)
 
 
 from osgeo import gdal
 import numpy
-dataset = gdal.Open("foo.tif")
+dataset = gdal.Open("gdata/foo.tif")
 band2= dataset.GetRasterBand(2)
 band3= dataset.GetRasterBand(3)
 cols = 100

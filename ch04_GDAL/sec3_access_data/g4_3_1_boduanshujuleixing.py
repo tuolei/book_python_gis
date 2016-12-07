@@ -1,18 +1,16 @@
 # -*- coding: utf-8 -*-
 import os
 import sys
-print(sys.path)
-sys.path.append('/usr/lib/python3/dist-packages/osgeo')
-import config
 
-os.chdir(config.gisws)
+
+
 
 from osgeo import gdalconst
 dir(gdalconst)
 
 
 from osgeo import gdal
-dataset = gdal.Open("foo.tif")
+dataset = gdal.Open("gdata/foo.tif")
 dataset.ReadAsArray(30,70,5,5)
 dataset.ReadAsArray(30,70,5,5).tostring()
 dataset.ReadRaster(30,70,5,5)
@@ -22,7 +20,7 @@ print(band.DataType)
 
 from PIL import Image
 # Todo: will echo warning if the image is big.
-im = Image.open("foo.tif")
+im = Image.open("gdata/foo.tif")
 # region = im.crop((30,70,35,75))
 # region.tostring()
 

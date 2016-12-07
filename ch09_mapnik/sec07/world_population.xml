@@ -90,7 +90,7 @@
     <StyleName>countries_label</StyleName>
     <Datasource>
       <Parameter name="type">shape</Parameter>
-      <Parameter name="file">/opt/vshare/gdata/ne_110m_admin_0_countries.shp</Parameter>
+      <Parameter name="file">../../gdata/ne_110m_admin_0_countries.shp</Parameter>
     </Datasource>
   </Layer>
 </Map>

@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
-from osgeo import gdal
-import config
 
-os.chdir(config.gisws)
 
 '''
 创建3波段GTiff的例子，多波段影像的创建方式与之类似
