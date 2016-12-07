@@ -3,7 +3,7 @@
 '''
 布尔型
 '''
-print( 4 > 30)
+print(4 > 30)
 print(True | False)
 
 # 数值类型
@@ -20,17 +20,6 @@ v3.0后，确切的讲， int 型（依赖运行环境C编译器中long型的精
 print(type(int_a))
 
 print(int_b / int_a)
-
-
-
-
-
-
-
-
-
-
-
 
 print(int_b * 1.0 / int_a)
 
