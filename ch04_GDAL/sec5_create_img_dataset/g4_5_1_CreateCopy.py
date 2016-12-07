@@ -4,7 +4,7 @@ from osgeo import gdal
 
 driver = gdal.GetDriverByName("GTiff")
 
-src_filename = "gdata/foo.tif"
+src_filename = "gdata/lu75c.tif"
 dst_filename = "gdata/x_foo_copy.tif"
 src_ds = gdal.Open(src_filename)
 dst_ds = driver.CreateCopy(dst_filename, src_ds, 0)

@@ -2,9 +2,7 @@
 
 
 import os
-import config
 
-os.chdir(config.gisws)
 
 # 创建点要素
 from osgeo import ogr

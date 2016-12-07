@@ -21,6 +21,4 @@ band.ComputeRasterMinMax()
 band.DataType
 
 
-def Test():
-    assert dataset
 
