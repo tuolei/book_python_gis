@@ -13,6 +13,3 @@ else:
     print('b is greater than c')
 
 
-def Test2():
-    assert a == 1.4969723467801361
-    assert c <b

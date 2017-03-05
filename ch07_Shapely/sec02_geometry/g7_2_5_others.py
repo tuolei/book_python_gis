@@ -37,6 +37,6 @@ def cut(line,distance):
                 return [
                     LineString(coords[:i] + [(cp.x,cp.y)]),
                     LineString([(cp.x,cp.y)] + coords[i:])]
-# line = LineString([0,0),
+# line = LineString([0,0])
 # pprint([list(x.coords) for x in cut(line,1.0)])
 # pprint([list(x.coords) for x in cut(line,2.5)])
