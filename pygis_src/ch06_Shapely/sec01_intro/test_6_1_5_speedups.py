@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
 from shapely import speedups
-speedups.available
-speedups.enable()
 
+print(speedups.available)
+speedups.enable()

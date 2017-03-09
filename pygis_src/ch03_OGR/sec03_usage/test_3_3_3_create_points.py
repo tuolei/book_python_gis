@@ -12,7 +12,6 @@ driver = ogr.GetDriverByName("ESRI Shapefile")
 extfile='xx_1world_borders.shp'
 point_coors = [[300,450],[750,700],[1200,450],[750,200],[750,450]]
 print(point_coors)
-driver = ogr.GetDriverByName("ESRI Shapefile")
 if os.access(extfile,os.F_OK):
     driver.DeleteDataSource(extfile)
 newds = driver.CreateDataSource(extfile)

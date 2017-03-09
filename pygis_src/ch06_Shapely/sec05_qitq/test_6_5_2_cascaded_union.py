@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import os
 
 
 from shapely.geometry import Point, LineString, LinearRing, Polygon,  MultiLineString, MultiPoint

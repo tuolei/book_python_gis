@@ -12,7 +12,7 @@ donut = Point(0, 0).buffer(2, 0).difference(Point(0, 0).buffer(1.0))
 print(donut.centroid.wkt)
 print(donut.representative_point().wkt)
 
-# duidianzhuang
+# Copy feature.
 import os
 from osgeo import ogr
 import shapely.geometry

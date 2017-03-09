@@ -3,13 +3,6 @@
 import math
 
 
-def sayHello():
-    print('Hello World!')
-
-
-sayHello()
-
-
 def get_circle_area(r):
     area = math.pi * r * r
     return (area)
@@ -47,6 +40,7 @@ func2(3, 7)
 func2(25, c=24)
 func2(c=50, a=100)
 
+# 模块
 import os
 
 
@@ -57,15 +51,3 @@ def print_file_path(indir):
             if ('wx' in file_name) and (file_ext == '.py'):
                 filepath = os.path.join(wroot.wfile)
                 print(filepath)
-
-
-from math import *
-
-
-def math_demo():
-    x = 3
-    y = 4
-    z = sqrt(pow(x, 2) + pow(y, 2))
-    print(z)
-
-

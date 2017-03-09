@@ -31,6 +31,3 @@ layernew.CreateFeature(feat)
 newds.Destroy()
 
 
-
-def Test():
-    assert True

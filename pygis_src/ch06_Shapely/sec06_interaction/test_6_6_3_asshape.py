@@ -2,15 +2,19 @@
 import os
 
 from shapely.geometry import asShape
-d = {"type":"Point","coordinates": (0.0,0.0)}
-shape =asShape(d)
-shape.geom_type
+
+d = {"type": "Point", "coordinates": (0.0, 0.0)}
+shape = asShape(d)
+print(shape.geom_type)
 list(shape.coords)
 
+
 class GeoThing(object):
-    def __init__(self,d):
+    def __init__(self, d):
         self.__geo_interface__ = d
-thing = GeoThing({"typr":"Point","coordinates": (0.0,0.0)})
+
+
+thing = GeoThing({"typr": "Point", "coordinates": (0.0, 0.0)})
 # Todo: Error
 # shape = asShape(thing)
 # shape.geom_type
@@ -21,7 +25,3 @@ thing = GeoThing({"typr":"Point","coordinates": (0.0,0.0)})
 # m = mapping(thing)
 # m['type']
 # m['coordinates']
-
-
-def Test():
-    assert True

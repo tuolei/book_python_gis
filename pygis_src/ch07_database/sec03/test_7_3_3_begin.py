@@ -2,8 +2,6 @@
 import sqlite3 as sqlite
 import os
 
-
-
 # 这个地方注意，使用挂载的Windows，有问题。
 spt_file = "gdata/xx_myDatabase2.sqlite"
 # spt_file = "./xx_myDatabase2.sqlite"
@@ -24,14 +22,12 @@ cursor.execute("CREATE TABLE gshhs (" +
                "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                "level INTEGER)")
 
-
 cursor.execute("CREATE INDEX gshhs_level ON gshhs(level)")
 
 cursor.execute("SELECT AddGeometryColumn('gshhs', 'geom', " +
                "4326, 'POLYGON', 2)")
 
 cursor.execute("SELECT CreateSpatialIndex('gshhs', 'geom')")
-
 
 db.commit()
 
@@ -55,7 +51,6 @@ def Test():
     assert shapefile
     assert db
     assert cursor
-
 
 # def tearDown():
 #     if cursor:

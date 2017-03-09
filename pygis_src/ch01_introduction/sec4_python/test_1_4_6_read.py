@@ -25,8 +25,6 @@ id    Sepal.Length Sepal.Width Petal.Length Petal.Width
 16           5.7         4.4          1.5         0.4
 '''
 
-import sys
-
 fi = open('gdata/data_io.dat')
 cnts = fi.readlines()
 fo = open('gdata/xx_result.dat', 'w')

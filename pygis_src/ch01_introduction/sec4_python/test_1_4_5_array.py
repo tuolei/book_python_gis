@@ -84,10 +84,7 @@ print(dict_demo.keys())
 for short_name, long_name in dict_demo.items():
     print(('short Name:%4s -> Long Name:%s') % (short_name, long_name))
 
-path = r'e:book'
-print(path)
-print('**n\t'"r**")
-print(len(path))
+
 str_val = 's' + 'pam'
 print(str_val)
 

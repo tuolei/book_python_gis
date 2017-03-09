@@ -18,8 +18,8 @@ band.ReadAsArray(100, 100, 5, 5, 10, 10)
 
 band.ReadAsArray(100, 100, 10, 10)
 
-band.XSize
-band.YSize
+print(band.XSize)
+print(band.YSize)
 band.ReadAsArray(95, 100, 5, 5)
 
 print(band.XSize)
@@ -31,4 +31,5 @@ print(band.YSize)
 band.DataType
 '''
 from osgeo import gdalconst
+
 print(dir(gdalconst))

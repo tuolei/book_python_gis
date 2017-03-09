@@ -63,8 +63,9 @@ import shapely.geometry
 
 from shapely.ops import cascaded_union
 
+#################################################################################################################
 driver = ogr.GetDriverByName('ESRI Shapefile')
-out_shp = 'x_world_borders.shp'
+out_shp = 'gdata/xx_buf_world_borders.shp'
 if os.path.exists(out_shp):
     driver.DeleteDataSource(out_shp)
 
