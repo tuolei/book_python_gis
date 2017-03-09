@@ -5,12 +5,6 @@ import math
 n, x, y = 2, 8, 9
 a = math.cos(3 * (x - n)) + math.sin(3 * (y - n))
 
-c = 13
-b = 50
-if c > b:
-    print('c is greater than b')
-else:
-    print('b is greater than c')
 
 
 '''
@@ -57,8 +51,3 @@ print('abcdnefgh')
 print('abcdnefgh')
 
 print('''abcdfdsf''')
-
-
-def Test():
-    assert type(int_a) == type(5)
-    assert type(com_i) == type(1.3 + 5.4 * 1j)

@@ -4,7 +4,7 @@ from osgeo import gdal
 
 
 driver = gdal.GetDriverByName('GTiff')
-dst_filename =  'gdata/tmp.tif'
+dst_filename =  'gdata/xx_tmp.tif'
 dst_ds = driver.Create(dst_filename,512,512,1,gdal.GDT_Byte)
 
 

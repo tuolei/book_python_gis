@@ -2,6 +2,15 @@
 
 rangs = range(1, 5)
 print(rangs)
+
+c = 13
+b = 50
+if c > b:
+    print('c is greater than b')
+else:
+    print('b is greater than c')
+
+
 for val in rangs:
     print(val)
 else:

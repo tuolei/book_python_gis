@@ -69,8 +69,3 @@ def math_demo():
     print(z)
 
 
-def sayhi():
-    print('Hi ,this is mymodule apeaking.')
-
-
-version = '0.1'
