@@ -35,6 +35,7 @@ my_map2.drawparallels(np.arange(-90, 90, 30))
 
 plt.savefig(os.path.join(os.path.split(os.path.realpath(__file__))[0],
                          'xx_' + os.path.split(os.path.realpath(__file__))[1][5:-3] + '1.png'))
+plt.clf()
 
 # China
 
