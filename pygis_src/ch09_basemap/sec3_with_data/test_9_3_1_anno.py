@@ -1,7 +1,4 @@
-
 # -*- coding: utf-8 -*-
-
-
 
 
 
@@ -27,20 +24,23 @@ m.drawmeridians(np.arange(60., 140., 10.), labels=[0, 0, 0, 1], color='black', l
 
 # plt.show()
 
-x, y = m(116.4204, 40.21244) # Bejing
-x2, y2 = m( 125.27538, 43.83453) # Changchun
+x, y = m(116.4204, 40.21244)  # Bejing
+x2, y2 = m(125.27538, 43.83453)  # Changchun
 # x2, y2 = ((x2 - x) / 10000, (y2 - y)/ 10000) # Changchun
 #
 # print('x,y', x, y)
 # print('x2,y2', x2, y2)
 
-plt.annotate('Barcelona', xy=(x, y),  xycoords='data',
-                # xytext=(x2, y2), textcoords='offset points',
-                xytext=(x2, y2), textcoords='data',
-                color='r',
-                arrowprops=dict(arrowstyle="fancy", color='g')
-                )
+plt.annotate('Barcelona', xy=(x, y), xycoords='data',
+             # xytext=(x2, y2), textcoords='offset points',
+             xytext=(x2, y2), textcoords='data',
+             color='r',
+             arrowprops=dict(arrowstyle="fancy", color='g')
+             )
 
-plt.savefig('xx_basemap_plot_anno.png')
+import os
+
+plt.savefig(os.path.join(os.path.split(os.path.realpath(__file__))[0],
+                         'xx_' + os.path.split(os.path.realpath(__file__))[1][5:-2] + 'png'))
 plt.clf()
 plt.close()

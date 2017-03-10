@@ -18,6 +18,8 @@ my_map.drawmeridians(np.arange(0, 360, 30))
 my_map.drawparallels(np.arange(-90, 90, 30))
 
 # plt.show()
-plt.savefig('xx_basemap_1_world_map.png')
+
+import os
+plt.savefig(os.path.join(os.path.split(os.path.realpath(__file__))[0], 'xx_' + os.path.split(os.path.realpath(__file__))[1][5:-2] + 'png'))
 plt.clf()
 plt.close()

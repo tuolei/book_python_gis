@@ -4,6 +4,7 @@
 command:
     python3 ch11_basemap/sec1_demo/sub1_foo.py
 '''
+import os
 
 "python3-mpltoolkits.basemap"
 
@@ -70,6 +71,7 @@ for i,j,k,name in zip(x,y,pops,names):
 plt.title('Major Cities in Asia & Population')
 # plt.show()
 
-plt.savefig('xx_basemap_3.png')
+plt.savefig(os.path.join(os.path.split(os.path.realpath(__file__))[0], 'xx_' + os.path.split(os.path.realpath(__file__))[1][5:-2] + 'png'))
+
 plt.clf()
 plt.close()

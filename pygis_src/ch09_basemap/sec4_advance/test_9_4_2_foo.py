@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import os
 from mpl_toolkits.basemap import Basemap
 import matplotlib.pyplot as plt
 import numpy as np
@@ -25,6 +26,7 @@ meridians = np.arange(10., 351., 20.)
 m.drawmeridians(meridians, labels=[True, False, False, True])
 # plt.show()
 
-plt.savefig('xx_basemap_4.png')
+plt.savefig(os.path.join(os.path.split(os.path.realpath(__file__))[0], 'xx_' + os.path.split(os.path.realpath(__file__))[1][5:-2] + 'png'))
+
 plt.clf()
 plt.close()

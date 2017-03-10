@@ -18,4 +18,8 @@ ax.add_collection3d(map.drawcountries(linewidth=0.35))
 
 # plt.show()
 
+import os
+
+plt.savefig(os.path.join(os.path.split(os.path.realpath(__file__))[0],
+                         'xx_' + os.path.split(os.path.realpath(__file__))[1][5:-2] + 'png'))
 plt.savefig('xx_basemap_8.png')
